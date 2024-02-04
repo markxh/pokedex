@@ -8,11 +8,20 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 class RepositoryModule {
+
+    @Provides
+    fun provideRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("https://pokeapi.co/api/v2/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
 
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService {
@@ -21,7 +30,7 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providePokedexRepository(apiService: ApiService) : PokedexRepository {
+    fun providePokedexRepository(apiService: ApiService): PokedexRepository {
         return PokedexRepositoryImpl(apiService)
     }
 }
