@@ -1,6 +1,7 @@
 package com.markxh.pokedex.core.di
 
 import com.markxh.pokedex.ui.feature.dashboard.domain.repository.PokedexRepository
+import com.markxh.pokedex.ui.feature.dashboard.domain.usecase.GetPokemonDetailsUseCase
 import com.markxh.pokedex.ui.feature.dashboard.domain.usecase.GetPokemonUseCase
 import dagger.Module
 import dagger.Provides
@@ -13,4 +14,9 @@ class UseCaseModule {
     @Provides
     fun provideGetPokemonUseCase(pokedexRepository: PokedexRepository) =
         GetPokemonUseCase(pokedexRepository)
+
+    @Provides
+    fun provideGetPokemonDetailsUseCase(pokedexRepository: PokedexRepository) =
+        GetPokemonDetailsUseCase(pokedexRepository)
+
 }

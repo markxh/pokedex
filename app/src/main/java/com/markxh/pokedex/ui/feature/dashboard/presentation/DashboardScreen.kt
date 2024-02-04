@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.markxh.pokedex.ui.feature.dashboard.data.model.Pokemon
+import com.markxh.pokedex.ui.feature.dashboard.data.model.PokemonResponse
 
 @Composable
 fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
@@ -40,7 +40,7 @@ fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
 }
 
 @Composable
-fun PokemonList(pokemonList: List<Pokemon>) {
+fun PokemonList(pokemonList: List<PokemonResponse>) {
     LazyColumn {
         items(pokemonList) { pokemon ->
             PokemonItem(pokemon)
@@ -63,7 +63,7 @@ fun LoadingScreen() {
 }
 
 @Composable
-fun PokemonItem(pokemon: Pokemon) {
+fun PokemonItem(pokemon: PokemonResponse) {
     Box(
         modifier = Modifier
             .padding(16.dp)

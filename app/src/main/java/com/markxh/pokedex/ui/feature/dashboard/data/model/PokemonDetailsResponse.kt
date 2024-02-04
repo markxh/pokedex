@@ -1,8 +1,8 @@
 package com.markxh.pokedex.ui.feature.dashboard.data.model
 
-data class Pokemon(
+data class PokemonDetailsResponse(
     val name: String,
     val height: Int,
     val weight: Int,
-    val frontImageUrl: String
+    val sprites: SpritesResponse
 )
