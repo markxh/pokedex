@@ -1,4 +1,4 @@
-package com.markxh.pokedex.ui.feature.dashboard.data.model
+package com.markxh.pokedex.ui.feature.detail.data.model
 
 data class PokemonDetailsResponse(
     val name: String,

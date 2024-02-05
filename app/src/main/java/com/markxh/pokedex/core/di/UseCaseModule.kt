@@ -1,8 +1,8 @@
 package com.markxh.pokedex.core.di
 
 import com.markxh.pokedex.ui.feature.dashboard.domain.repository.PokedexRepository
-import com.markxh.pokedex.ui.feature.dashboard.domain.usecase.GetPokemonDetailsUseCase
 import com.markxh.pokedex.ui.feature.dashboard.domain.usecase.GetPokemonUseCase
+import com.markxh.pokedex.ui.feature.detail.domain.usecase.GetPokemonDetailsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

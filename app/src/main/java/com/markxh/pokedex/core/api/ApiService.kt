@@ -1,7 +1,7 @@
 package com.markxh.pokedex.core.api
 
-import com.markxh.pokedex.ui.feature.dashboard.data.model.PokemonDetailsResponse
 import com.markxh.pokedex.ui.feature.dashboard.data.model.PokemonListResponse
+import com.markxh.pokedex.ui.feature.detail.data.model.PokemonDetailsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

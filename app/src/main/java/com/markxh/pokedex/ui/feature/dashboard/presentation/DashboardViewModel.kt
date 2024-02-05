@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.markxh.pokedex.ui.feature.dashboard.domain.usecase.GetPokemonDetailsUseCase
 import com.markxh.pokedex.ui.feature.dashboard.domain.usecase.GetPokemonUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -13,8 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DashboardViewModel @Inject constructor(
-    private val getPokemonUseCase: GetPokemonUseCase,
-    private val getPokemonDetailsUseCase: GetPokemonDetailsUseCase
+    private val getPokemonUseCase: GetPokemonUseCase
 ) : ViewModel() {
 
     private val _pokemonState = MutableLiveData<PokemonState>()
@@ -40,20 +38,4 @@ class DashboardViewModel @Inject constructor(
                 }
         }
     }
-
-//    private fun getPokemonDetails(name: String) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            getPokemonDetailsUseCase(name)
-//                .onSuccess { pokemon ->
-//                    _pokemonState.postValue(pokemon?.let { PokemonState.Success(it) })
-//                }
-//                .onFailure { error ->
-//                    _pokemonState.postValue(
-//                        PokemonState.Error(
-//                            error.localizedMessage ?: "Unknown error"
-//                        )
-//                    )
-//                }
-//        }
-//    }
 }

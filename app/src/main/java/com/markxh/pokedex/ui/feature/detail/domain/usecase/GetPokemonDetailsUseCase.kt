@@ -1,4 +1,4 @@
-package com.markxh.pokedex.ui.feature.dashboard.domain.usecase
+package com.markxh.pokedex.ui.feature.detail.domain.usecase
 
 import com.markxh.pokedex.ui.feature.dashboard.domain.repository.PokedexRepository
 
